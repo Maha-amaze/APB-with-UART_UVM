@@ -9,7 +9,7 @@ class apb_scoreboard extends uvm_scoreboard;
   
     bit [7:0] sc_apb [4];
 
-    uvm_analysis_port#(apb_seq_item, apb_scoreboard) aport;
+  uvm_analysis_port#(apb_seq_item) aport;
   `uvm_component_utils(apb_scoreboard)
 
   function new (string name, uvm_component parent);
