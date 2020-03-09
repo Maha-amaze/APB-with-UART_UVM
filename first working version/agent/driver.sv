@@ -1,6 +1,5 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
-//`define DRIV_IF 
 
 class apb_driver extends uvm_driver #(apb_seq_item);
 
@@ -38,22 +37,22 @@ class apb_driver extends uvm_driver #(apb_seq_item);
   // drive - transaction level to signal level
   // drives the value's from seq_item to interface signals
   //---------------------------------------
-    /* task drive();
+    task drive();
     vif.PSEL  <= 1;
     vif.PWRITE <= 0;
     //@(posedge vif.DRIVER.clk);
     
     vif.PADDR <= apb_transactor.PADDR;
     
-    if(PWRITE==1) begin // write operation
+       if(vif.PWRITE==1) begin // write operation
       vif.PWRITE <= apb_transactor.PWRITE;
       vif.PWDATA <= apb_transactor.PWDATA;
       //@(posedge vif.DRIVER.clk);
     end
-    else if(PWRITE==0) begin //read operation
-      DRIV_IF.PRDATA=apb_transactor.PRDATA;
+    else begin //read operation
+      vif.PRDATA=apb_transactor.PRDATA;
        //@(posedge vif.DRIVER.clk);
-      apb_transactor.PRDATA = DRIV_IF.PRDATA;
+      apb_transactor.PRDATA = vif.PRDATA;
     end*/
     
   endtask : drive
