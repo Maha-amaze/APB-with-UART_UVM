@@ -1,0 +1,44 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+. /u/sgeadmin/ge6.2u5/default/common/settings.sh
+alias gvim='/usr/bin/gvim'
+alias c='clear'
+alias p='pwd'
+alias g='gvim'
+alias r='rm -rf simv.daidir/ simv work vc_hdrs.h csrc/'
+alias 8='cd ../../../../../../../../'
+alias 7='cd ../../../../../../../'
+alias 6='cd ../../../../../../'
+alias 5='cd ../../../../../'
+alias 4='cd ../../../../'
+alias 3='cd ../../../'
+alias 2='cd ../../'
+alias 1='cd ../'
+export DISPLAY='10.100.55.237:59'
+#export PATH=/tools/mentor/qsim10.3b/questasim/bin:$PATH
+export PATH=/tools/mentor/qsim_core_prime_10.6b/questasim/bin:$PATH
+export LM_LICENSE_FILE=1717@eda-infra1:1717@eda-infra2:1717@eda-infra3:1717@parker1:$LM_LICENSE_FILE
+#export VCS_HOME=/tools/synopsys/vcs/vcs-mx_vK-2015.09
+#export VCS_HOME=/tools/synopsys/vcs/vcs-mx_vN-2017.12-SP2
+#export VCS_HOME=/tools/synopsys/vcs/vcs_mx_M-2017.03-SP2-2
+export VCS_HOME=/tools/synopsys/vcs/vcs-mx_vO-2018.09-SP2-2/vcs-mx/O-2018.09-SP2-2
+export PATH=$VCS_HOME/bin:$PATH
+#export PATH=/tools/mentor/modelsim10.4d/modeltech/bin:$PATH
+export PATH=/tools/synopsys/vcs/vcs-mx_vO-2018.09-SP2-2/vcs-mx/O-2018.09-SP2-2/bin:$PATH
+export  LM_LICENSE_FILE=1709@eda-infra1:1709@eda-infra2:1709@eda-infra3:$LM_LICENSE_FILE
+export LM_LICENSE_FILE=5280@eda-infra1:5280@eda-infra2:5280@eda-infra3:$LM_LICENSE_FILE
+#export UVM_HOME=/tools/mentor/qsim10.3b/questasim/uvm-1.1d
+#export UVM_HOME=/tools/synopsys/vcs/vcs-mx_vK-2015.09/etc/uvm-1.2
+export UVM_HOME=/tools/synopsys/vcs/vcs-mx_vK-2017.12-SP2/vcs-mx/N-2017.12-SP2/etc/uvm-1.2
+#export UVM_HOME=/tools/mentor/qsim10.3b/questasim/verilog_src/uvm-1.1d/src/
+
+alias syn_dve='qrsh -V -cwd -verbose -q short dve -full64'
+alias syn_vcs='qrsh -V -cwd -verbose -q short vcs -full64'
+alias syn_simv='qrsh -V -cwd -verbose -q short simv -full64'
+alias lic_usage='/u21/madhan/mgls/bin/lmstat -c 1709@eda-infra1 -ai'
