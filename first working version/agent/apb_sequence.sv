@@ -15,7 +15,7 @@ class apb_model_sequence extends uvm_sequence#(apb_seq_item);
     apb_seq_item txn=new();
     repeat(50) begin
     start_item(txn);
-      txn.randomize();
+     
       finish_item(txn);
     end
     
