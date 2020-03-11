@@ -11,7 +11,7 @@ module apb_slave(PRESETn,PCLK,PWRITE,PSELx,PENABLE,PWDATA,PADDR,PRDATA,PREADY);
   //output PERR;       
   
   reg [1:0]apb_state;
-  reg [31:0]mem [0:4];
+  reg [31:0]mem [15:0];
   
   always @(posedge PCLK or negedge PRESETn)
     begin     
